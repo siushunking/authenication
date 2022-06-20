@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const authRoute = require("./routes").auth;
 const secretRoute = require("./routes").secret;
-const PORT = 3000
+const PORT = process.env.PORT
 const passport = require("passport");
 require("./config/passport")(passport);
 
@@ -26,7 +26,7 @@ mongoose
   app.use(express.urlencoded({ extended: true }));
   app.use("/api/user", authRoute);
   app.use(
-    "/api/courses",
+    "/api/secret",
     passport.authenticate("jwt", { session: false }),
     secretRoute
   );

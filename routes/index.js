@@ -1,5 +1,5 @@
 module.exports = {
     auth: require("./auth"),
-    secret: require('./secret')
+    secret: require('./post')
   };
   

@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ["student", "instructor"],
+    enum: ["employee", "employer"],
     required: true,
   },
   date: {
@@ -31,12 +31,12 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-userSchema.methods.isStudent = function () {
-  return this.role == "student";
+userSchema.methods.isEmployee = function () {
+  return this.role == "employee";
 };
 
-userSchema.methods.isIntructor = function () {
-  return this.role == "instructor";
+userSchema.methods.isEmployer = function () {
+  return this.role == "employer";
 };
 
 userSchema.methods.isAdmin = function () {
